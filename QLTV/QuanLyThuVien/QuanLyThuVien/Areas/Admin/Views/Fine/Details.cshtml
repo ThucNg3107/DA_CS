@@ -1,0 +1,86 @@
+@using QuanLyThuVien.Models
+@model Fine
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết phiếu phạt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 bg-white text-dark" style="max-width: 600px;">
+        <h3 class="fw-bold text-center"> Chi Tiết Phiếu Phạt</h3>
+        <hr class="bg-light">
+
+        <div class="text-start">
+            <p><strong>Mã phiếu phạt:</strong> #@Model.FineId</p>
+            <p>
+                <strong>Phiếu mượn:</strong>
+                <a asp-controller="Loan" asp-action="Details" asp-route-id="@Model.LoanId">
+                    #@Model.LoanId - @Model.Loan?.Book?.Name
+                </a>
+            </p>
+            <p>
+                <strong>Người mượn:</strong>
+                <a asp-controller="LibraryCard" asp-action="Details" asp-route-id="@Model.Loan?.CardId">
+                    @Model.Loan?.LibraryCard?.FullName
+                </a>
+            </p>
+            <p><strong>Số tiền phạt:</strong> <span class="fw-bold text-danger">@Model.Amount.ToString("N0") đ</span></p>
+            <p><strong>Ngày tạo:</strong> @Model.CreatedDate.ToString("dd/MM/yyyy")</p>
+            <p><strong>Hạn thanh toán:</strong> @Model.DueDate.ToString("dd/MM/yyyy")</p>
+            <p>
+                <strong>Trạng thái:</strong>
+                @if (Model.Status == FineStatus.Paid)
+                {
+                    <span class="badge bg-success">✅ Đã thanh toán</span>
+                }
+                else if (Model.Status == FineStatus.Overdue)
+                {
+                    <span class="badge bg-danger">⚠️ Quá hạn</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning">⌛ Chờ thanh toán</span>
+                }
+            </p>
+
+            @if (Model.PaidDate.HasValue)
+            {
+                <p><strong>Ngày thanh toán:</strong> @Model.PaidDate.Value.ToString("dd/MM/yyyy")</p>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p><strong>Mô tả:</strong> @Model.Description</p>
+            }
+        </div>
+
+        <div class="mt-4 text-center">
+            <a asp-action="Edit" asp-route-id="@Model.FineId" class="btn btn-warning fw-bold btn-lg rounded-pill px-4 shadow-sm">
+                <i class="fas fa-edit"></i>Sửa
+            </a>
+            <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm ms-2">
+                <i class="fas fa-arrow-left"></i>  Trở Lại
+            </a>
+        </div>
+
+        @if (Model.Status != FineStatus.Paid)
+        {
+            <div class="mt-3 text-center">
+                <form asp-action="MarkAsPaid" asp-route-id="@Model.FineId" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-success fw-bold btn-lg rounded-pill px-4 shadow-sm">
+                        <i class="fas fa-check"></i>  Đánh dấu đã thanh toán
+                    </button>
+                </form>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

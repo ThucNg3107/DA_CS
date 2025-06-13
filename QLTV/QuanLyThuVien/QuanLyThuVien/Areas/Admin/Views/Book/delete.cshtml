@@ -1,0 +1,51 @@
+﻿@model QuanLyThuVien.Models.Book
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Delete Book";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 rounded shadow-sm text-center" style="max-width: 600px; background-color: #ffffff; border: 1px solid #ccc;">
+        <h2 class="text-danger fw-bold">Xóa Sách</h2>
+        <p class="text-muted mt-3">Bạn có chắc muốn xóa sách này? Hành động này <strong>không thể hoàn tác</strong>.</p>
+
+        <div class="mb-3 text-start">
+            <p><strong> Tên sách:</strong> @Model.Name</p>
+            <p><strong>Tác giả:</strong> @Model.Author</p>
+            <p><strong> Nhà xuất bản:</strong> @Model.Publisher</p>
+            <p><strong> Năm xuất bản:</strong> @Model.PublishedYear</p>
+            <p><strong> Trạng thái:</strong> @Model.BookStatus</p>
+        </div>
+
+        <div class="mb-3">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Book Image" class="img-thumbnail" style="max-width: 250px;">
+            }
+            else
+            {
+                <p class="text-secondary fst-italic">Không có ảnh</p>
+            }
+        </div>
+
+        <form asp-action="Delete" asp-route-id="@Model.BookId" method="post" id="deleteForm">
+            <input type="hidden" asp-for="BookId" />
+            <div class="d-flex justify-content-center gap-3">
+                <button type="button" class="btn btn-outline-danger px-4" onclick="confirmDelete()"> Xóa</button>
+                <a asp-action="Index" class="btn btn-outline-secondary px-4"> Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete() {
+            if (confirm("Bạn có chắc chắn muốn xóa cuốn sách này?")) {
+                document.getElementById("deleteForm").submit();
+            }
+        }
+    </script>
+}

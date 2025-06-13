@@ -1,0 +1,77 @@
+@using QuanLyThuVien.Models
+@model QuanLyThuVien.Models.Fine
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa phiếu phạt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-dark" style="max-width: 700px;">
+        <h2 class="fw-bold text-danger"> Xóa Phiếu Phạt</h2>
+        <hr class="bg-light">
+
+        <p class="lead text-primary">Bạn có chắc chắn muốn xóa phiếu phạt này?</p>
+
+        <div class="card bg-light border-dark mb-4 text-start">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4 fw-bold">Mã phiếu phạt:</dt>
+                    <dd class="col-sm-8">@Model.FineId</dd>
+
+                    <dt class="col-sm-4 fw-bold">Phiếu mượn:</dt>
+                    <dd class="col-sm-8">@($"#{Model.LoanId} - {Model.Loan?.Book?.Name}")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Người mượn:</dt>
+                    <dd class="col-sm-8">@Model.Loan?.LibraryCard?.FullName</dd>
+
+                    <dt class="col-sm-4 fw-bold">Số tiền phạt:</dt>
+                    <dd class="col-sm-8">@Model.Amount.ToString("N0") đ</dd>
+
+                    <dt class="col-sm-4 fw-bold">Ngày tạo:</dt>
+                    <dd class="col-sm-8">@Model.CreatedDate.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Hạn thanh toán:</dt>
+                    <dd class="col-sm-8">@Model.DueDate.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Trạng thái:</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.Status == FineStatus.Paid)
+                        {
+                            <span class="badge bg-success rounded-pill">Đã thanh toán</span>
+                        }
+                        else if (Model.Status == FineStatus.Overdue)
+                        {
+                            <span class="badge bg-danger rounded-pill">Quá hạn</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark rounded-pill">Chờ thanh toán</span>
+                        }
+                    </dd>
+
+                    @if (Model.PaidDate.HasValue)
+                    {
+                        <dt class="col-sm-4 fw-bold">Ngày thanh toán:</dt>
+                        <dd class="col-sm-8">@Model.PaidDate.Value.ToString("dd/MM/yyyy")</dd>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.Description))
+                    {
+                        <dt class="col-sm-4 fw-bold">Mô tả:</dt>
+                        <dd class="col-sm-8">@Model.Description</dd>
+                    }
+                </dl>
+            </div>
+        </div>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="FineId" />
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-danger fw-bold btn-lg rounded-pill px-4 shadow-sm"> Xóa</button>
+                <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm"> Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>

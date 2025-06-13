@@ -1,0 +1,87 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.Book>
+
+@{
+    ViewData["Title"] = "Danh mục sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <!-- Nút thoát về trang chính -->
+    <div class="mb-3">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-outline-primary">
+            <i class="fas fa-home"></i> Về trang chính
+        </a>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2 class="text-dark fw-bold">🗂️ Danh Mục Sách</h2>
+        </div>
+        <div class="col-md-6">
+            <form method="get" asp-action="Index" class="d-flex justify-content-end">
+                <select name="categoryId" class="form-select" style="max-width: 250px;" onchange="this.form.submit()">
+                    <option value="">-- Tất cả thể loại --</option>
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        if (ViewData["CategoryId"] != null && (int)ViewData["CategoryId"] == category.CategoryId)
+                        {
+                            <option value="@category.CategoryId" selected>@category.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@category.CategoryId">@category.Name</option>
+                        }
+                    }
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" id="bookList">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-3 mb-4 book-item">
+                <div class="card h-100 shadow-sm">
+                    @if (!string.IsNullOrEmpty(book.ImageUrl))
+                    {
+                        <img src="@book.ImageUrl" class="card-img-top" alt="@book.Name" style="height: 200px; object-fit: cover;">
+                    }
+                    else
+                    {
+                        <img src="~/images/default-book.jpg" class="card-img-top" alt="@book.Name" style="height: 200px; object-fit: cover;">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate" title="@book.Name">@book.Name</h5>
+                        <p class="card-text mb-1"><small class="text-muted">Tác giả: @book.Author</small></p>
+                        <p class="card-text mb-1"><small class="text-muted">Thể loại: @book.Category?.Name</small></p>
+                        <p class="card-text mb-2">
+                            <small class="text-muted">
+                                Vị trí: Dãy @book.ShelfRow - Kệ @book.ShelfNumber
+                            </small>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge @(book.BookStatus == QuanLyThuVien.Models.Book.Status.Available ? "bg-success" :
+                                             (book.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed ? "bg-warning" : "bg-danger"))">
+                                @if (book.BookStatus == QuanLyThuVien.Models.Book.Status.Available)
+                                {
+                                    @:Còn hàng
+                                }
+                                else if (book.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed)
+                                {
+                                    @:Đang mượn
+                                }
+                                else
+                                {
+                                    @:Hết hàng
+                                }
+                            </span>
+                            <a href="@Url.Action("Details", "SachChiTiet", new { id = book.BookId })" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

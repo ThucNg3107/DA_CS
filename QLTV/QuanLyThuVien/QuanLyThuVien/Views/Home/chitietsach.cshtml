@@ -1,0 +1,95 @@
+﻿@model QuanLyThuVien.Models.Book
+@{
+    ViewData["Title"] = "Chi Tiết Sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <div class="row">
+                <!-- Hình ảnh sách -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                        {
+                            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;">
+                        }
+                        else
+                        {
+                            <img src="~/images/default-book.jpg" alt="@Model.Name" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;">
+                        }
+                    </div>
+                </div>
+
+                <!-- Thông tin sách -->
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-primary mb-3">@Model.Name</h2>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Thể loại</span>
+                            <span class="fw-bold">@Model.Category?.Name</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Tác giả</span>
+                            <span class="fw-bold">@Model.Author</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Nhà xuất bản</span>
+                            <span class="fw-bold">@Model.Publisher</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Năm xuất bản</span>
+                            <span class="fw-bold">@Model.PublishedYear</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Số lượng</span>
+                            <span class="fw-bold">@Model.Quantity</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Vị trí</span>
+                            <span class="fw-bold">Dãy @Model.ShelfRow - Kệ @Model.ShelfNumber</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="badge bg-info me-2">Trạng thái</span>
+                            @if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Available)
+                            {
+                                <span class="badge bg-success">Còn hàng</span>
+                            }
+                            else if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed)
+                            {
+                                <span class="badge bg-warning">Đang mượn</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Hết hàng</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left"></i> Quay lại
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .badge {
+            font-size: 0.9rem;
+            padding: 0.5em 0.8em;
+        }
+    </style>
+}

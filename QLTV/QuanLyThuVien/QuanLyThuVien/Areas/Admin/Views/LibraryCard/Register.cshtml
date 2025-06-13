@@ -1,0 +1,56 @@
+﻿@using QuanLyThuVien.Models
+@model QuanLyThuVien.Models.LibraryCard
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Đăng ký thẻ thư viện";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-black" style="max-width: 600px;">
+        <h2 class="fw-bold">🆕 Đăng Ký Thẻ</h2>
+        <hr class="bg-light">
+
+        <form asp-action="Register" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="StudentID" class="fw-bold">ID</label>
+                <input asp-for="StudentID" class="form-control rounded-pill border-0 shadow-sm" required />
+                <span asp-validation-for="StudentID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FullName" class="fw-bold">Tên</label>
+                <input asp-for="FullName" class="form-control rounded-pill border-0 shadow-sm" required />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PhoneNumber" class="fw-bold">SDT</label>
+                <input asp-for="PhoneNumber" class="form-control rounded-pill border-0 shadow-sm" required />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="IssuedDate" class="fw-bold">Ngày Đăng Ký</label>
+                <input asp-for="IssuedDate" type="date" class="form-control rounded-pill border-0 shadow-sm" required />
+                <span asp-validation-for="IssuedDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ExpiryDate" class="fw-bold">Ngày Hết Hạn</label>
+                <input asp-for="ExpiryDate" type="date" class="form-control rounded-pill border-0 shadow-sm" required />
+                <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+            </div>
+
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-success fw-bold btn-lg rounded-pill px-4 shadow-sm">✔ Đăng Ký</button>
+                <a asp-action="Index" class="btn btn-outline-black fw-bold btn-lg rounded-pill px-4 shadow-sm">↩ Trở Lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

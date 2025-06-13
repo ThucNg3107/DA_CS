@@ -1,0 +1,212 @@
+﻿@model QuanLyThuVien.Models.Book
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi Tiết Sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentUserId = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        var claim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+        if (claim != null)
+        {
+            currentUserId = claim.Value;
+        }
+    }
+    var fullNames = ViewBag.UserFullNames as Dictionary<string, string>;
+    var userEmails = ViewBag.UserEmails as Dictionary<string, string>;
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body fs-4">
+            <div class="row">
+                <!-- Hình ảnh sách -->
+                <div class="col-md-4">
+                    <div class="text-center">
+                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                        {
+                            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid" style="max-height: 400px; object-fit: cover;">
+                        }
+                        else
+                        {
+                            <img src="~/images/default-book.jpg" alt="@Model.Name" class="img-fluid" style="max-height: 400px; object-fit: cover;">
+                        }
+                    </div>
+                </div>
+
+                <!-- Thông tin sách -->
+                <div class="col-md-8">
+                    <h3 class="fw-semibold text-dark mb-3">@Model.Name</h3>
+
+                    <ul class="list-unstyled">
+                        <li><strong>Thể loại:</strong> @Model.Category?.Name</li>
+                        <li><strong>Tác giả:</strong> @Model.Author</li>
+                        <li><strong>Nhà xuất bản:</strong> @Model.Publisher</li>
+                        <li><strong>Năm xuất bản:</strong> @Model.PublishedYear</li>
+                        <li><strong>Số lượng:</strong> @Model.Quantity</li>
+                        <li><strong>Vị trí:</strong> Dãy @Model.ShelfRow - Kệ @Model.ShelfNumber</li>
+                        <li>
+                            <strong>Trạng thái:</strong>
+                            @if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Available)
+                            {
+                                <span class="text-success">Còn hàng</span>
+                            }
+                            else if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed)
+                            {
+                                <span class="text-warning">Đang mượn</span>
+                            }
+                            else
+                            {
+                                <span class="text-danger">Hết hàng</span>
+                            }
+                        </li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <a href="@Url.Action("Index", "SachChiTiet")" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Quay lại danh sách
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- BÌNH LUẬN VÀ ĐÁNH GIÁ -->
+<div class="container my-5">
+    <h3 class="mb-4">Bình luận & Đánh giá</h3>
+    @if (User.Identity.IsAuthenticated && !string.IsNullOrEmpty(ViewBag.CurrentUserEmail))
+    {
+        <div class="mb-2"><strong>Email đăng nhập:</strong> @ViewBag.CurrentUserEmail</div>
+    }
+    <!-- Form gửi bình luận -->
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form asp-action="AddComment" asp-controller="SachChiTiet" method="post" class="mb-4">
+            <input type="hidden" name="bookId" value="@Model.BookId" />
+            <div class="mb-2">
+                <label for="content" class="form-label">Nội dung bình luận</label>
+                <textarea name="content" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="mb-2">
+                <label for="rating" class="form-label">Đánh giá</label>
+                <select name="rating" class="form-select w-auto d-inline-block" required>
+                    <option value="">Chọn sao</option>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <option value="@i">@i ⭐</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Gửi bình luận</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-info">Bạn cần <a href="/Identity/Account/Login">đăng nhập</a> để bình luận.</div>
+    }
+    <!-- Danh sách bình luận -->
+    <div class="list-group">
+        @if (ViewBag.Comments != null && ViewBag.Comments.Count > 0)
+        {
+            foreach (var cmt in ViewBag.Comments)
+            {
+                <div class="list-group-item mb-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>
+                                @{
+                                    if (string.IsNullOrEmpty(cmt.UserId))
+                                    {
+                                        @:Ẩn danh
+                                    }
+                                    else if (userEmails != null && userEmails.ContainsKey(cmt.UserId))
+                                    {
+                                        @userEmails[cmt.UserId]
+                                    }
+                                    else
+                                    {
+                                        @cmt.UserId
+                                    }
+                                }
+                            </strong>
+                            <span class="text-warning ms-2">@string.Concat(Enumerable.Repeat("★", cmt.Rating))@string.Concat(Enumerable.Repeat("☆", 5 - cmt.Rating))</span>
+                        </div>
+                        <small class="text-muted">@cmt.CreatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <div>@cmt.Content</div>
+                        @if (User.Identity.IsAuthenticated && cmt.UserId == currentUserId)
+                        {
+                            <div class="ms-3 d-flex gap-1">
+                                <form asp-action="DeleteComment" asp-controller="SachChiTiet" method="post" class="d-inline">
+                                    <input type="hidden" name="commentId" value="@cmt.CommentId" />
+                                    <input type="hidden" name="bookId" value="@Model.BookId" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Xóa bình luận"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                                <button type="button" class="btn btn-sm btn-outline-warning" title="Sửa bình luận" onclick="showEditForm(@cmt.CommentId)"><i class="fas fa-edit"></i></button>
+                            </div>
+                        }
+                    </div>
+                    <form asp-action="EditComment" asp-controller="SachChiTiet" method="post" id="editForm-@cmt.CommentId" style="display:none; margin-top:10px;">
+                        <input type="hidden" name="commentId" value="@cmt.CommentId" />
+                        <input type="hidden" name="bookId" value="@Model.BookId" />
+                        <textarea name="content" class="form-control mb-2" rows="2" required>@cmt.Content</textarea>
+                        <select name="rating" class="form-select w-auto d-inline-block mb-2" required>
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (cmt.Rating == i)
+                                {
+                                    <option value="@i" selected>@i ⭐</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@i ⭐</option>
+                                }
+                            }
+                        </select>
+                        <button type="submit" class="btn btn-sm btn-success">Lưu</button>
+                        <button type="button" class="btn btn-sm btn-secondary" onclick="hideEditForm(@cmt.CommentId)">Hủy</button>
+                    </form>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-secondary">Chưa có bình luận nào cho sách này.</div>
+        }
+    </div>
+</div>
+
+<script>
+    function showEditForm(id) {
+        document.getElementById('editForm-' + id).style.display = 'block';
+    }
+    function hideEditForm(id) {
+        document.getElementById('editForm-' + id).style.display = 'none';
+    }
+</script>
+
+@section Styles {
+    <style>
+        .badge {
+            font-size: 0.9rem;
+            padding: 0.5em 0.8em;
+        }
+
+        .list-group-item .btn-outline-danger, .list-group-item .btn-outline-warning {
+            min-width: 32px;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .list-group-item .btn-outline-danger i, .list-group-item .btn-outline-warning i {
+                font-size: 1rem;
+            }
+    </style>
+}

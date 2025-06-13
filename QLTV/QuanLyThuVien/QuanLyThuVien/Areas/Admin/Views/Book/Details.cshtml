@@ -1,0 +1,83 @@
+﻿@model QuanLyThuVien.Models.Book
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Book Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="card bg-light shadow-sm p-4 rounded">
+        <h3 class="text-center mb-4">Book Details</h3>
+        <div class="row">
+            <!-- Thông tin -->
+            <div class="col-md-6" style="padding-left: 300px;">
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Book Name:</div>
+                    <div>@Model.Name</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Author:</div>
+                    <div>@Model.Author</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Publisher:</div>
+                    <div>@Model.Publisher</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Published Year:</div>
+                    <div>@Model.PublishedYear</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Category:</div>
+                    <div>@Model.Category?.Name</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Quantity:</div>
+                    <div>@Model.Quantity</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Location:</div>
+                    <div>Shelf Row @Model.ShelfRow - Shelf Number @Model.ShelfNumber</div>
+                </div>
+                <div class="mb-2 d-flex">
+                    <div class="fw-semibold me-2">Status:</div>
+                    <div>
+                        <span class="badge
+                            @(Model.BookStatus == QuanLyThuVien.Models.Book.Status.Available ? "bg-success" :
+                              (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed ? "bg-warning" : "bg-danger"))">
+                            @if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Available)
+                            {
+                                @:Available
+                            }
+                            else if (Model.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed)
+                            {
+                                @:Borrowed
+                            }
+                            else
+                            {
+                                @:Out of Stock
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hình ảnh -->
+            <div class="col-md-6 text-center">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" alt="Book Image" class="img-fluid rounded shadow-sm border" style="max-height: 350px;">
+                }
+                else
+                {
+                    <p class="text-muted">No image available.</p>
+                }
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-action="Index" asp-controller="Book" class="btn btn-secondary px-4">Back to List</a>
+        </div>
+    </div>
+</div>

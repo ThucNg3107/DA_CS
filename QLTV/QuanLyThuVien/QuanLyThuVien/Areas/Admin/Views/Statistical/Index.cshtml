@@ -1,0 +1,197 @@
+@{
+	ViewData["Title"] = "Báo cáo thống kê";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	var loanStats = ViewBag.LoanStats as IEnumerable<dynamic>;
+	var popularCategories = ViewBag.PopularCategories as IEnumerable<dynamic>;
+	var recentLoans = ViewBag.RecentLoans as IEnumerable<QuanLyThuVien.Models.Loan>;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<div class="container-xl mt-4">
+	<h2 class="text-dark fw-bold"><i class="bi bi-bar-chart"></i> Báo cáo thống kê</h2>
+
+	<div class="row mt-4 g-4">
+		<div class="col-md-4">
+			<div class="card shadow-sm border-0 bg-white text-dark">
+				<div class="card-body text-center">
+					<h5 class="card-title fw-bold"><i class="bi bi-people"></i> Tổng số người dùng</h5>
+					<p class="fs-3 text-danger">@ViewBag.TotalUsers</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card shadow-sm border-0 bg-white text-dark">
+				<div class="card-body text-center">
+					<h5 class="card-title fw-bold"><i class="bi bi-book"></i> Tổng số sách</h5>
+					<p class="fs-3 text-danger">@ViewBag.TotalBooks</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card shadow-sm border-0 bg-white text-dark">
+				<div class="card-body text-center">
+					<h5 class="card-title fw-bold"><i class="bi bi-journal-arrow-up"></i> Số lượt mượn tháng này</h5>
+					<p class="fs-3 text-danger">@ViewBag.TotalLoansThisMonth</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4 g-4">
+		<div class="col-md-8">
+			<div class="card shadow-sm border-0 bg-white text-dark">
+				<div class="card-header" style="background-color: #cfe2ff; color: black; font-weight: bold;">
+					<i class="bi bi-bar-chart-line"></i> Thống kê mượn sách theo tháng
+				</div>
+				<div class="card-body">
+					<canvas id="loanChart" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card shadow-sm border-0 bg-white text-dark">
+				<div class="card-header" style="background-color: #cfe2ff; color: black; font-weight: bold;">
+					<i class="bi bi-list-ul"></i> Thể loại sách phổ biến
+				</div>
+				<div class="card-body">
+					<ul class="list-group">
+						@if (popularCategories != null)
+						{
+							foreach (var cat in popularCategories)
+							{
+								<li class=" bi bi-book list-group-item px-2 px-1">
+									@cat.Category						
+								</li>
+							}
+						}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card shadow-sm border-0 bg-white text-dark mt-4">
+		<div class="card-header" style="background-color: #cfe2ff; color: black; font-weight: bold;">
+			<i class="bi bi-table"></i> Bảng thống kê mượn sách gần đây
+		</div>
+		<div class="card-body">
+			<div class="table-responsive w-100">
+				<table class="table table-hover table-striped align-middle">
+					<thead class="table">
+						<tr>
+							<th>STT</th>
+							<th>Người mượn</th>
+							<th>Tên sách</th>
+							<th>Ngày mượn</th>
+							<th>Hạn trả</th>
+							<th>Trạng thái</th>
+						</tr>
+					</thead>
+					<tbody>
+						@if (recentLoans != null)
+						{
+							int stt = 1;
+							foreach (var loan in recentLoans)
+							{
+								<tr>
+									<td>@stt</td>
+									<td>@loan.LibraryCard?.FullName</td>
+									<td>@loan.Book?.Name</td>
+									<td>@loan.BorrowedDate.ToString("dd/MM/yyyy")</td>
+									<td>@loan.DueDate.ToString("dd/MM/yyyy")</td>
+									<td>
+										@if (loan.Status.ToString() == "Borrowed")
+										{
+											<span class="badge bg-warning text-dark">Đang mượn</span>
+										}
+										else if (loan.Status.ToString() == "Overdue")
+										{
+											<span class="badge bg-danger">Quá hạn</span>
+										}
+										else
+										{
+											<span class="badge bg-success">Đã trả</span>
+										}
+									</td>
+								</tr>
+								stt++;
+							}
+						}
+						else
+						{
+							<tr>
+								<td colspan="6" class="text-center text-muted">Không có lượt mượn nào gần đây.</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+	var ctx = document.getElementById('loanChart').getContext('2d');
+	var labels = [];
+	var data = [];
+	@if (loanStats != null)
+	{
+		foreach (var stat in loanStats)
+		{
+			<text>
+						labels.push('@($"Thang {stat.Month}/{stat.Year}")');
+						data.push(@stat.Count);
+			</text>
+		}
+	}
+	var loanChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: labels,
+			datasets: [{
+				label: 'Số lượt mượn',
+				data: data,
+					backgroundColor: 'rgba(23, 162, 184, 0.7)'
+				}]
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: { display: false }
+			},
+			scales: {
+				y: {
+					ticks: {
+						stepSize: 1,
+						callback: function(value) {
+							if (Number.isInteger(value)) {
+								return value;
+							}
+						}
+					},
+					beginAtZero: true
+				}
+			}
+		}
+	});
+</script>
+
+<style>
+		.table-hover tbody tr:hover {
+				background-color: #f8f9fa;
+				transition: background 0.2s;
+
+	}
+
+		.badge {
+				font-size: 1rem;
+
+	}
+
+		.card-title {
+				font-size: 1.2rem;
+
+	}
+</style>

@@ -1,0 +1,146 @@
+@using QuanLyThuVien.Models
+@model IEnumerable<Fine>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý phiếu phạt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xl mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-dark fw-bold">💰 Quản lý Phiếu Phạt</h2>
+        <div>
+            <a asp-action="UnpaidFines" class="btn btn-warning rounded-pill px-4 fw-bold shadow-sm me-2">⚠️ Phiếu Chưa Thanh Toán</a>
+            <a asp-action="Create" class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm">➕ Thêm Phiếu Phạt</a>
+        </div>
+    </div>
+
+    <div class="card shadow-lg mt-4 bg-white text-dark p-3">
+        <div class="card-body">
+            <div class="table-responsive w-100">
+                <table id="finesTable" class="table table-hover w-100">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Mã phiếu</th>
+                            <th>Mã mượn</th>
+                            <th>Sách</th>
+                            <th>Người mượn</th>
+                            <th>Số tiền</th>
+                            <th>Ngày tạo</th>
+                            <th>Hạn thanh toán</th>
+                            <th>Trạng thái</th>
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-fine-id="@item.FineId" data-due-date="@item.DueDate.ToString("yyyy-MM-dd")">
+                                <td>@item.FineId</td>
+                                <td>@item.LoanId</td>
+                                <td>@item.Loan?.Book?.Name</td>
+                                <td>@item.Loan?.LibraryCard?.FullName</td>
+                                <td>@item.Amount.ToString("N0") đ</td>
+                                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.DueDate.ToString("dd/MM/yyyy")</td>
+                                <td class="status-cell">
+                                    @switch (item.Status)
+                                    {
+                                        case FineStatus.Pending:
+                                            <span class="badge bg-warning rounded-pill">Chờ thanh toán</span>
+                                            break;
+                                        case FineStatus.Paid:
+                                            <span class="badge bg-success rounded-pill">Đã thanh toán</span>
+                                            break;
+                                        case FineStatus.Overdue:
+                                            <span class="badge bg-danger rounded-pill">Quá hạn</span>
+                                            break;
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.FineId" class="btn btn-warning btn-sm rounded-pill">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.FineId" class="btn btn-info btn-sm rounded-pill">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        @if (item.Status != FineStatus.Paid)
+                                        {
+                                            <form asp-action="MarkAsPaid" asp-route-id="@item.FineId" method="post" class="d-inline">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-success btn-sm rounded-pill" onclick="return confirm('Xác nhận đã thanh toán phiếu phạt này?')">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        <a asp-action="Delete" asp-route-id="@item.FineId" class="btn btn-danger btn-sm rounded-pill">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#finesTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Vietnamese.json"
+                },
+                "pageLength": 10,
+                "ordering": true,
+                "responsive": true,
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+
+            // Hàm kiểm tra và cập nhật trạng thái quá hạn
+            function checkOverdueStatus() {
+                const now = new Date();
+                const rows = document.querySelectorAll('#finesTable tbody tr');
+                
+                rows.forEach(row => {
+                    const dueDate = new Date(row.dataset.dueDate);
+                    const statusCell = row.querySelector('.status-cell');
+                    const statusBadge = statusCell.querySelector('.badge');
+                    
+                    // Chỉ cập nhật nếu phiếu chưa thanh toán
+                    if (statusBadge.classList.contains('bg-warning')) {
+                        if (now > dueDate) {
+                            // Cập nhật giao diện
+                            statusBadge.className = 'badge bg-danger rounded-pill';
+                            statusBadge.textContent = 'Quá hạn';
+                            
+                            // Gửi request cập nhật trạng thái lên server
+                            const fineId = row.dataset.fineId;
+                            fetch(`/Admin/Fine/UpdateStatus/${fineId}`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+
+            // Kiểm tra ngay khi trang load
+            checkOverdueStatus();
+
+            // Kiểm tra mỗi phút
+            setInterval(checkOverdueStatus, 60000);
+        });
+    </script>
+}

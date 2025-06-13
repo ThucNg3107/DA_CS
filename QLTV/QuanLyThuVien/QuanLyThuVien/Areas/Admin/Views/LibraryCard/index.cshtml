@@ -1,0 +1,65 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.LibraryCard>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý thẻ thư viện";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xl mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-dark fw-bold">📜 Thẻ Thư Viện</h2>
+        <a asp-action="Register" class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm">➕ Thêm Thẻ Mới</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["Success"]</div>
+    }
+
+    <div class="card shadow-lg mt-4 bg-white text-dark p-3">
+        <div class="card-body">
+            <div class="table-responsive w-100">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>SDT</th>
+                            <th>Ngày Đăng Ký</th>
+                            <th>Ngày Hết Hạn</th>
+                            <th>Số sách đang mượn</th>
+                            <th class="text-center">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var card in Model)
+                        {
+                            var currentLoans = card.Loans != null ? card.Loans.Count(l => l.Status != QuanLyThuVien.Models.LoanStatus.Returned) : 0;
+                            <tr>
+                                <td>@card.CardId</td>
+                                <td>@card.StudentID</td>
+                                <td>@card.FullName</td>
+                                <td>@card.PhoneNumber</td>
+                                <td>@card.IssuedDate.ToShortDateString()</td>
+                                <td>@card.ExpiryDate.ToShortDateString()</td>
+                                <td><span class="fw-bold">@currentLoans/5</span></td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Update" asp-route-id="@card.CardId" class="btn btn-warning btn-sm rounded-pill">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@card.CardId" class="btn btn-danger btn-sm rounded-pill">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

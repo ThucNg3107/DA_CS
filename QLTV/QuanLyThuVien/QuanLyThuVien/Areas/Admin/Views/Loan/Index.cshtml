@@ -1,0 +1,112 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.Loan>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý mượn sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-dark fw-bold">🔄 Quản lý Mượn Sách</h2>
+        <a asp-action="Create" class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm">➕ Thêm Mượn Sách</a>
+    </div>
+
+    <div class="card shadow-lg mt-5 bg-white text-dark p-3">
+        <div class="card-body">
+            <div class="table-responsive w-100">
+                <table id="loansTable" class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Mã mượn</th>
+                            <th>Tên sách</th>
+                            <th>Người mượn</th>
+                            <th>Ngày mượn</th>
+                            <th>Hạn trả</th>
+                            <th>Thời gian còn lại</th>
+                            <th>Tình trạng </th>
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            var daysRemaining = (item.DueDate - DateTime.Now).Days;
+                            <tr>
+                                <td>@item.LoanId</td>
+                                <td>@item.Book?.Name</td>
+                                <td>@item.LibraryCard?.FullName</td>
+                                <td>@item.BorrowedDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.DueDate.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    @if (daysRemaining < 0)
+                                    {
+                                        <span class="badge bg-danger rounded-pill">Đã quá hạn @Math.Abs(daysRemaining) ngày</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success rounded-pill">Còn @daysRemaining ngày</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Status == QuanLyThuVien.Models.LoanStatus.Borrowed)
+                                    {
+                                        <span class="badge bg-success rounded-pill">Đang mượn</span>
+                                    }
+                                    else if (item.Status == QuanLyThuVien.Models.LoanStatus.Overdue)
+                                    {
+                                        <span class="badge bg-danger rounded-pill">Quá hạn</span>
+                                    }
+                                    else if (item.Status == QuanLyThuVien.Models.LoanStatus.Returned)
+                                    {
+                                        <span class="badge bg-warning rounded-pill text-dark">Đã trả</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.LoanId" class="btn btn-warning btn-sm rounded-pill">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.LoanId" class="btn btn-info btn-sm rounded-pill">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        @if (item.Status != QuanLyThuVien.Models.LoanStatus.Returned)
+                                        {
+                                            <form asp-action="ReturnBook" asp-route-id="@item.LoanId" method="post" style="display:inline">
+                                                <button type="submit" class="btn btn-success btn-sm rounded-pill" title="Xác nhận đã trả sách">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        <a asp-action="Delete" asp-route-id="@item.LoanId" class="btn btn-danger btn-sm rounded-pill">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#loansTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Vietnamese.json"
+                },
+                "pageLength": 10,
+                "ordering": true,
+                "responsive": true,
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+}

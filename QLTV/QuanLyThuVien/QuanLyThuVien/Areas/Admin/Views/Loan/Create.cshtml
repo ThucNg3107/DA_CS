@@ -1,0 +1,91 @@
+@using QuanLyThuVien.Models
+@model Loan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Thêm mượn sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-black" style="max-width: 600px;">
+        <h2 class="fw-bold">➕ Thêm Mượn Sách</h2>
+        <hr class="bg-light">
+
+        <form asp-action="Create" method="post" id="loanForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="BookId" class="fw-bold">Sách</label>
+                <select asp-for="BookId" class="form-control rounded-pill border-0 shadow-sm" asp-items="ViewBag.Books">
+                    <option value="">-- Chọn sách --</option>
+                </select>
+                <span asp-validation-for="BookId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CardId" class="fw-bold">Thẻ thư viện</label>
+                <select asp-for="CardId" class="form-control rounded-pill border-0 shadow-sm" asp-items="ViewBag.LibraryCards">
+                    <option value="">-- Chọn thẻ thư viện --</option>
+                </select>
+                <span asp-validation-for="CardId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="BorrowedDate" class="fw-bold">Ngày mượn</label>
+                <input asp-for="BorrowedDate" type="date" class="form-control rounded-pill border-0 shadow-sm" id="borrowedDate" />
+                <span asp-validation-for="BorrowedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DueDate" class="fw-bold">Hạn trả</label>
+                <input asp-for="DueDate" type="date" class="form-control rounded-pill border-0 shadow-sm" id="dueDate" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+                <span id="dateError" class="text-danger"></span>
+            </div>
+
+
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Mượn là phải nhớ trả nha!
+            </div>
+
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-success fw-bold btn-lg rounded-pill px-4 shadow-sm">✔ Thêm</button>
+                <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm">↩ Trở Lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.getElementById('loanForm').addEventListener('submit', function(e) {
+            const borrowedDate = new Date(document.getElementById('borrowedDate').value);
+            const dueDate = new Date(document.getElementById('dueDate').value);
+            const dateError = document.getElementById('dateError');
+
+            if (borrowedDate >= dueDate) {
+                e.preventDefault();
+                dateError.textContent = 'Mời nhập lại!';
+            } else {
+                dateError.textContent = '';
+            }
+        });
+
+        // Validate on date change
+        document.getElementById('borrowedDate').addEventListener('change', validateDates);
+        document.getElementById('dueDate').addEventListener('change', validateDates);
+
+        function validateDates() {
+            const borrowedDate = new Date(document.getElementById('borrowedDate').value);
+            const dueDate = new Date(document.getElementById('dueDate').value);
+            const dateError = document.getElementById('dateError');
+
+            if (borrowedDate && dueDate && borrowedDate >= dueDate) {
+                dateError.textContent = 'Mời nhập lại: Ngày mượn phải nhỏ hơn ngày trả!';
+            } else {
+                dateError.textContent = '';
+            }
+        }
+    </script>
+} 

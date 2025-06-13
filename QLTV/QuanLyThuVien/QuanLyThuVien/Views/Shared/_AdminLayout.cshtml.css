@@ -1,0 +1,259 @@
+﻿/* Thanh menu bên trái */
+.thanh-menu {
+    width: 300px;
+    height: 100vh;
+    background-color: #e8f1f2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+/* Logo và tiêu đề */
+.logo-tieu-de {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.logo-tron {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.logo-tieu-de h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+/* Menu items */
+.thanh-dieu-huong .nav-link {
+    color: #333 !important;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    font-size: 1.0rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+    .thanh-dieu-huong .nav-link:hover {
+        background-color: #fff;
+        transform: translateX(10px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .thanh-dieu-huong .nav-link i {
+        font-size: 1.2rem;
+        width: 24px;
+        text-align: center;
+        color: #0066cc;
+    }
+
+        /* Tăng khoảng cách giữa icon và text */
+        .thanh-dieu-huong .nav-link i.me-3 {
+            margin-right: 15px !important;
+        }
+
+.nav-item {
+    margin-bottom: 5px !important; /* Giảm khoảng cách giữa các mục menu */
+}
+
+/* Main content area */
+body {
+    margin-left: 300px;
+    background-color: #f8f9fa;
+}
+
+/* Header search bar */
+.search-header {
+    margin-left: 250px;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 250px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+    .search-container input {
+        width: 100%;
+        padding: 8px 15px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+    }
+
+/* Content sections */
+.main-content {
+    margin-top: 0;
+    padding: 10px 30px;
+}
+
+/* Cards layout */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    height: 100%;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 10%; /* Giảm kích thước ảnh xuống */
+    height: auto;
+    margin: 20px auto; /* Căn giữa ảnh */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa các phần tử trong card-body */
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-title {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    margin: 10px auto; /* Căn giữa nút */
+}
+
+/* Căn giữa tiêu đề các section */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Điều chỉnh container */
+.container {
+    max-width: 1400px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: 0 auto; /* Đảm bảo container được căn giữa */
+}
+
+/* Điều chỉnh container trong thanh menu */
+.thanh-menu .container {
+    padding-left: 15px; /* Giảm padding của container */
+    padding-right: 15px;
+}
+
+/* Căn giữa phần ảnh giới thiệu */
+.anhgioithieu-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto 0;
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.anhgioithieu {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.overlay {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.overlay-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .overlay-text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .overlay-text span {
+        color: #0066cc;
+        font-weight: bold;
+    }
+
+    .overlay-text p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .thanh-menu {
+        width: 0;
+        overflow: hidden;
+    }
+
+    body {
+        margin-left: 0;
+    }
+
+    .search-header {
+        margin-left: 0;
+        left: 0;
+    }
+}
+
+/* Điều chỉnh nav để có thể đặt nút thoát ở dưới cùng */
+nav {
+    height: calc(100vh - 150px); /* Chiều cao của viewport trừ đi phần header */
+}
+
+.thanh-dieu-huong {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style cho nút thoát */
+.text-danger {
+    color: #dc3545 !important;
+}
+
+    .text-danger i {
+        color: #dc3545 !important;
+    }
+
+    .text-danger:hover {
+        background-color: #dc3545 !important;
+        color: white !important;
+    }
+
+        .text-danger:hover i {
+            color: white !important;
+        }

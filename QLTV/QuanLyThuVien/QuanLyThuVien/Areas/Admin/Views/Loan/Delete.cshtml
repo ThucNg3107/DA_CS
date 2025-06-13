@@ -1,0 +1,59 @@
+@using QuanLyThuVien.Models
+@model Loan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "Xóa mượn sách";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-dark" style="max-width: 600px;">
+        <h2 class="fw-bold text-danger"> Xóa Mượn Sách</h2>
+        <hr class="bg-light">
+
+        <p class="lead text-primary">Bạn có chắc chắn muốn xóa thông tin mượn sách này?</p>
+        
+        <div class="card bg-light border-dark mb-4">
+            <div class="card-body text-start">
+                <dl class="row">
+                    <dt class="col-sm-4 fw-bold">Mã mượn:</dt>
+                    <dd class="col-sm-8">@Model.LoanId</dd>
+
+                    <dt class="col-sm-4 fw-bold">Sách:</dt>
+                    <dd class="col-sm-8">@Model.Book?.Name</dd>
+
+                    <dt class="col-sm-4 fw-bold">Người mượn:</dt>
+                    <dd class="col-sm-8">@Model.LibraryCard?.FullName</dd>
+
+                    <dt class="col-sm-4 fw-bold">Ngày mượn:</dt>
+                    <dd class="col-sm-8">@Model.BorrowedDate.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Hạn trả:</dt>
+                    <dd class="col-sm-8">@Model.DueDate.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Trạng thái:</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.Status == LoanStatus.Overdue)
+                        {
+                            <span class="badge bg-danger rounded-pill">Quá hạn</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success rounded-pill">Đang mượn</span>
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="LoanId" />
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-danger fw-bold btn-lg rounded-pill px-4 shadow-sm"> Xóa</button>
+                <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm"> Hủy</a>
+            </div>
+        </form>
+    </div>
+</div> 

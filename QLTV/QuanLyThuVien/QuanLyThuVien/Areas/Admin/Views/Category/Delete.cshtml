@@ -1,0 +1,24 @@
+﻿@model QuanLyThuVien.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "delete Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center">
+        <h2 class="text-danger fw-bold"> Xóa Thể Loại</h2>
+        <p class="text-black mt-3">Are you sure you want to delete the category <strong class="text-warning">"@Model.Name"</strong>?</p>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="CategoryId" />
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-danger w-48"> Yes, Delete</button>
+                <a asp-action="Index" class="btn btn-outline-dark w-48"> Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

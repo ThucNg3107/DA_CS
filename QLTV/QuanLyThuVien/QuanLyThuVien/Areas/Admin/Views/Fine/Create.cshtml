@@ -1,0 +1,91 @@
+﻿@using QuanLyThuVien.Models
+@model QuanLyThuVien.Models.Fine
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Thêm phiếu phạt";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-black" style="max-width: 600px;">
+        <h2 class="fw-bold">💰 Thêm Phiếu Phạt</h2>
+        <hr class="bg-light">
+
+        <form asp-action="Create" method="post" id="fineForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="LoanId" class="fw-bold">Phiếu mượn</label>
+                <select asp-for="LoanId" class="form-control rounded-pill border-0 shadow-sm" asp-items="ViewBag.Loans">
+                    <option value="">-- Chọn phiếu mượn --</option>
+                </select>
+                <span asp-validation-for="LoanId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Amount" class="fw-bold">Số tiền phạt</label>
+                <input asp-for="Amount" type="number" class="form-control rounded-pill border-0 shadow-sm" min="0" step="1000" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CreatedDate" class="fw-bold">Ngày tạo phiếu</label>
+                <input asp-for="CreatedDate" type="date" class="form-control rounded-pill border-0 shadow-sm" id="createdDate" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DueDate" class="fw-bold">Hạn thanh toán</label>
+                <input asp-for="DueDate" type="date" class="form-control rounded-pill border-0 shadow-sm" id="dueDate" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+                <span id="dateError" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="fw-bold">Mô tả</label>
+                <textarea asp-for="Description" class="form-control rounded-pill border-0 shadow-sm" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-success fw-bold btn-lg rounded-pill px-4 shadow-sm">✔ Thêm </button>
+                <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm"> ↩ Trở Lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.getElementById('fineForm').addEventListener('submit', function(e) {
+            const createdDate = new Date(document.getElementById('createdDate').value);
+            const dueDate = new Date(document.getElementById('dueDate').value);
+            const dateError = document.getElementById('dateError');
+
+            if (createdDate >= dueDate) {
+                e.preventDefault();
+                dateError.textContent = 'Mời nhập lại!';
+            } else {
+                dateError.textContent = '';
+            }
+        });
+
+        // Validate on date change
+        document.getElementById('createdDate').addEventListener('change', validateDates);
+        document.getElementById('dueDate').addEventListener('change', validateDates);
+
+        function validateDates() {
+            const createdDate = new Date(document.getElementById('createdDate').value);
+            const dueDate = new Date(document.getElementById('dueDate').value);
+            const dateError = document.getElementById('dateError');
+
+            if (createdDate && dueDate && createdDate >= dueDate) {
+                dateError.textContent = 'Mời nhập lại: Ngày tạo phiếu phải nhỏ hơn hạn thanh toán!';
+            } else {
+                dateError.textContent = '';
+            }
+        }
+    </script>
+}

@@ -1,0 +1,243 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #e0f7fa, #bbdefb); /* Light blue to a slightly darker blue */
+        font-family: 'Segoe UI', Arial, sans-serif;
+        display: flex; /* Sử dụng flexbox */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao màn hình */
+        margin: 0;
+        padding: 20px; /* Thêm padding cho body để đảm bảo khoảng trống xung quanh card */
+        box-sizing: border-box; /* Bao gồm padding vào tổng kích thước */
+    }
+
+    .login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* Loại bỏ margin-top/padding-top ở đây vì body đã xử lý việc căn giữa */
+    }
+
+    .card {
+        border-radius: 1.25rem; /* More rounded corners */
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+        transition: all 0.4s ease-in-out;
+        border: none;
+        overflow: hidden;
+        max-width: 900px; /* Max width for the card */
+        width: 100%;
+        /* Loại bỏ margin 20px ở đây vì body đã xử lý padding chung */
+    }
+
+    .card:hover {
+        transform: translateY(-8px); /* More pronounced lift effect */
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header-left {
+        background: linear-gradient(45deg, #42a5f5, #f3285c); /* Vibrant blue gradient */
+        color: white;
+        padding: 3rem 2rem;
+        border-top-left-radius: 1.25rem;
+        border-bottom-left-radius: 1.25rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-header-left h2 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .card-header-left p {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .card-body {
+        padding: 3rem;
+    }
+
+    .form-floating > .form-control {
+        border-radius: 0.75rem; /* More rounded inputs */
+        border: 1px solid #c5cae9; /* Lighter border color */
+        padding-top: 1.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .form-floating > label {
+        color: #78909c; /* Softer label color */
+        padding: 1rem 1rem;
+    }
+
+    .form-floating > .form-control:focus,
+    .form-floating > .form-control:not(:placeholder-shown) {
+        border-color: #2196f3; /* Focus border color */
+        box-shadow: 0 0 0 0.25rem rgba(33, 150, 243, 0.25);
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #2196f3, #1976d2); /* Deeper blue gradient */
+        border: none;
+        border-radius: 0.75rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 0.25rem 0.75rem rgba(33, 150, 243, 0.25);
+    }
+
+    .btn-primary:hover {
+        opacity: 0.95;
+        transform: translateY(-3px);
+        box-shadow: 0 0.5rem 1rem rgba(33, 150, 243, 0.35);
+    }
+
+    .btn-outline-primary {
+        border-color: #2196f3;
+        color: #2196f3;
+        border-radius: 0.75rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #2196f3;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 0.25rem 0.75rem rgba(33, 150, 243, 0.2);
+    }
+
+    .text-link {
+        color: #1976d2; /* A deeper blue for links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .text-link:hover {
+        color: #2196f3;
+        text-decoration: underline;
+    }
+
+    .social-login-separator {
+        margin: 2rem 0;
+        color: #90a4ae; /* Softer grey for separator */
+        font-size: 0.95rem;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .card-header-left {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 1.25rem;
+            padding: 2rem 1.5rem;
+        }
+
+        .card-body {
+            padding: 2rem 1.5rem;
+        }
+
+        .card-header-left h2 {
+            font-size: 2rem;
+        }
+
+        .card-header-left p {
+            font-size: 1rem;
+        }
+    }
+
+    /* Đảm bảo nội dung không bị che trên màn hình rất nhỏ */
+    @@media (max-height: 600px) {
+        body {
+            padding: 10px; /* Giảm padding tổng thể cho body */
+        }
+        .card-body {
+            padding: 1rem; /* Giảm padding để thu gọn form */
+        }
+        .card-header-left {
+            padding: 1.5rem; /* Giảm padding cho phần bên trái */
+        }
+    }
+
+</style>
+
+<div class="login-wrapper">
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <div class="col-md-6 d-none d-md-flex card-header-left">
+                <div>
+                    <h2>Chào mừng trở lại với HT Library!</h2>
+                    <img src="https://png.pngtree.com/png-vector/20230510/ourmid/pngtree-free-vector-book-lover-composition-with-stack-of-colorful-books-pencil-png-image_7093248.png" alt="Welcome Illustration" class="img-fluid mt-5" style="opacity: 0.9;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h3 class="text-center mb-5 fw-bold" style="color: #2196f3;">Đăng nhập </h3>
+                    <form id="account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small" role="alert"></div>
+
+                        <div class="form-floating mb-4">
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email">Email</label>
+                            <span asp-validation-for="Input.Email" class="text-danger small mt-1"></span>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                            <label asp-for="Input.Password">Mật khẩu</label>
+                            <span asp-validation-for="Input.Password" class="text-danger small mt-1"></span>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            <label class="form-check-label" asp-for="Input.RememberMe">
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+
+                        <button id="login-submit" type="submit" class="w-100 btn btn-primary mb-4">Đăng nhập</button>
+
+                        <div class="text-center small">
+                            <p class="mb-2"><a id="forgot-password" asp-page="./ForgotPassword" class="text-link">Quên mật khẩu?</a></p>
+                            <p class="mb-2">Chưa có tài khoản? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-link">Đăng ký người dùng mới</a></p>
+                            <p><a id="resend-confirmation" asp-page="./ResendEmailConfirmation" class="text-link">Gửi lại email xác nhận</a></p>
+                        </div>
+                    </form>
+
+                    @if ((Model.ExternalLogins?.Count ?? 0) != 0)
+                    {
+                        <div class="social-login-separator text-center">Hoặc đăng nhập với</div>
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="d-grid gap-3">
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-outline-primary" name="provider" value="@provider.Name">
+                                    <i class="fab fa-@provider.Name.ToLower() me-2"></i> Đăng nhập với @provider.DisplayName
+                                </button>
+                            }
+                        </form>
+                    }
+                    @* Removed the "No external login services configured" message as requested *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+}

@@ -1,0 +1,473 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\QuanLyThuVien.bundle.scp.css",
+      "PackagePath": "staticwebassets\\QuanLyThuVien.5qg4bgi5o1.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\02ffeaeb-607c-4911-81b7-be01bf780c8a_39cd9a1fc0bcfb68efa34466bf3edbd5.jpg",
+      "PackagePath": "staticwebassets\\images\\02ffeaeb-607c-4911-81b7-be01bf780c8a_39cd9a1fc0bcfb68efa34466bf3edbd5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\0380b0f3-6049-458f-867e-7a49334b6569_620b401d-b0ea-4ec5-8365-109116e35583.jpg",
+      "PackagePath": "staticwebassets\\images\\0380b0f3-6049-458f-867e-7a49334b6569_620b401d-b0ea-4ec5-8365-109116e35583.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\102b698e-6722-490c-85dc-3b99c14544cb_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\102b698e-6722-490c-85dc-3b99c14544cb_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\140638e9-adfe-4bb8-b157-4e3e1d305b4e_images.jpg",
+      "PackagePath": "staticwebassets\\images\\140638e9-adfe-4bb8-b157-4e3e1d305b4e_images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\252916e4-1bc8-45ba-b90a-78770ba4e664_tải xuống (4).jpg",
+      "PackagePath": "staticwebassets\\images\\252916e4-1bc8-45ba-b90a-78770ba4e664_tải xuống (4).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\2870be8c-482d-4788-abf4-2bf61cd4013e_1003w-5jYTmzVneQk.webp",
+      "PackagePath": "staticwebassets\\images\\2870be8c-482d-4788-abf4-2bf61cd4013e_1003w-5jYTmzVneQk.webp"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\2d4754c1-5cac-4314-81f6-3fd18dd243d8_39cd9a1fc0bcfb68efa34466bf3edbd5.jpg",
+      "PackagePath": "staticwebassets\\images\\2d4754c1-5cac-4314-81f6-3fd18dd243d8_39cd9a1fc0bcfb68efa34466bf3edbd5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\3203246e-8c25-4df9-9a2b-ca70227be704_401473616_315200644630859_7398852239974593500_n.jpg",
+      "PackagePath": "staticwebassets\\images\\3203246e-8c25-4df9-9a2b-ca70227be704_401473616_315200644630859_7398852239974593500_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\33c19db2-a8d6-4408-a377-4c9de199123b_anh-cute-001-1.jpg",
+      "PackagePath": "staticwebassets\\images\\33c19db2-a8d6-4408-a377-4c9de199123b_anh-cute-001-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\3b4d2632-c4d7-45d4-b257-7e9240971174_tải xuống (2).jpg",
+      "PackagePath": "staticwebassets\\images\\3b4d2632-c4d7-45d4-b257-7e9240971174_tải xuống (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\418f73ef-916f-47d0-8724-3c68ec9b746f_1003w-5jYTmzVneQk.webp",
+      "PackagePath": "staticwebassets\\images\\418f73ef-916f-47d0-8724-3c68ec9b746f_1003w-5jYTmzVneQk.webp"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\4252c416-6438-4241-99f2-fef6a73dd9f2_Beyond the cover Ngôn tình  (12).jpg",
+      "PackagePath": "staticwebassets\\images\\4252c416-6438-4241-99f2-fef6a73dd9f2_Beyond the cover Ngôn tình  (12).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\44e72580-5ba7-4e52-bff0-9424d5390f0b_anh-nen-meo-de-thuong_093846627.jpg",
+      "PackagePath": "staticwebassets\\images\\44e72580-5ba7-4e52-bff0-9424d5390f0b_anh-nen-meo-de-thuong_093846627.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\47f0e7f9-820d-4d0b-86a7-c4e06843270d_6611-triet-hoc-1.jpg",
+      "PackagePath": "staticwebassets\\images\\47f0e7f9-820d-4d0b-86a7-c4e06843270d_6611-triet-hoc-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\57e1ee87-9054-4bb2-8feb-1b2a4157d4a2_tải xuống (2).jpg",
+      "PackagePath": "staticwebassets\\images\\57e1ee87-9054-4bb2-8feb-1b2a4157d4a2_tải xuống (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\5ae61dcb-bc33-45ff-b0d2-682ac89e1a9d_2505D33B.Anh-bia.012557.jpg",
+      "PackagePath": "staticwebassets\\images\\5ae61dcb-bc33-45ff-b0d2-682ac89e1a9d_2505D33B.Anh-bia.012557.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\5f5fe48b-037f-4aef-8f0f-e617008747f1_2022_06_07_14_08_56_1-390x510-2.jpg",
+      "PackagePath": "staticwebassets\\images\\5f5fe48b-037f-4aef-8f0f-e617008747f1_2022_06_07_14_08_56_1-390x510-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\6bf29308-0696-4dcd-b4e6-08c2db3639fd_Screenshot 2025-03-31 100739.png",
+      "PackagePath": "staticwebassets\\images\\6bf29308-0696-4dcd-b4e6-08c2db3639fd_Screenshot 2025-03-31 100739.png"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\6c295237-f124-480e-ab11-1643d0b64c65_c51aa1fc03000b4aa857efe6aa133b44.jpg",
+      "PackagePath": "staticwebassets\\images\\6c295237-f124-480e-ab11-1643d0b64c65_c51aa1fc03000b4aa857efe6aa133b44.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\7476248d-6164-4534-99ed-9970bd159175_494701467_1249047983895844_2934523821084923898_n.jpg",
+      "PackagePath": "staticwebassets\\images\\7476248d-6164-4534-99ed-9970bd159175_494701467_1249047983895844_2934523821084923898_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\753672bb-eaae-43e6-8153-700a5983b588_Beyond the cover Ngôn tình  (12).jpg",
+      "PackagePath": "staticwebassets\\images\\753672bb-eaae-43e6-8153-700a5983b588_Beyond the cover Ngôn tình  (12).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\865886f2-0876-43fb-b126-91df2c286699_10392-kinh-te-hoc-hai-huoc-1.jpg",
+      "PackagePath": "staticwebassets\\images\\865886f2-0876-43fb-b126-91df2c286699_10392-kinh-te-hoc-hai-huoc-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\869e129f-ea0a-449d-b302-4b3e4dad1356_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\869e129f-ea0a-449d-b302-4b3e4dad1356_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\89fb43e7-7e25-4562-a593-70d6a43dd7f8_6611-triet-hoc-1.jpg",
+      "PackagePath": "staticwebassets\\images\\89fb43e7-7e25-4562-a593-70d6a43dd7f8_6611-triet-hoc-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\91ed6a98-4a42-4278-a262-3d95577884bb_khoa-hoc-5png-1718762980654519600254.jpg",
+      "PackagePath": "staticwebassets\\images\\91ed6a98-4a42-4278-a262-3d95577884bb_khoa-hoc-5png-1718762980654519600254.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\946131f3-b1e1-4107-b713-9af3eb1a16f1_anh-cute-001-1.jpg",
+      "PackagePath": "staticwebassets\\images\\946131f3-b1e1-4107-b713-9af3eb1a16f1_anh-cute-001-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\9fa62d79-eccf-4569-a0ab-6532b1731676_6a8c75f7-e42b-4235-95ec-7122459e65c4.webp",
+      "PackagePath": "staticwebassets\\images\\9fa62d79-eccf-4569-a0ab-6532b1731676_6a8c75f7-e42b-4235-95ec-7122459e65c4.webp"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\9fb55f1e-7afd-444d-9813-a2a5c70664b7_images.jpg",
+      "PackagePath": "staticwebassets\\images\\9fb55f1e-7afd-444d-9813-a2a5c70664b7_images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\9fb579c0-7d37-4c4d-9181-64db37af740e_tải xuống.jpg",
+      "PackagePath": "staticwebassets\\images\\9fb579c0-7d37-4c4d-9181-64db37af740e_tải xuống.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\aa89f9ae-faa5-4047-bf4c-2eb9dba11f59_4493-kinh-te-hoc-vi-mo-1.jpg",
+      "PackagePath": "staticwebassets\\images\\aa89f9ae-faa5-4047-bf4c-2eb9dba11f59_4493-kinh-te-hoc-vi-mo-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\ab947b67-83b6-4132-adbd-a8bbc33e9810_images.png",
+      "PackagePath": "staticwebassets\\images\\ab947b67-83b6-4132-adbd-a8bbc33e9810_images.png"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\b002d1c9-82cc-4bc4-bf39-04232536bbc7_4493-kinh-te-hoc-vi-mo-1.jpg",
+      "PackagePath": "staticwebassets\\images\\b002d1c9-82cc-4bc4-bf39-04232536bbc7_4493-kinh-te-hoc-vi-mo-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\b60c4c93-e87e-4019-860a-c3c58dd5274d_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\b60c4c93-e87e-4019-860a-c3c58dd5274d_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\bccaac5d-1ae7-4f3f-87f2-b90f3a47e423_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\bccaac5d-1ae7-4f3f-87f2-b90f3a47e423_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\bdddcb70-d445-42ff-8441-31e06eb690cc_620b401d-b0ea-4ec5-8365-109116e35583.jpg",
+      "PackagePath": "staticwebassets\\images\\bdddcb70-d445-42ff-8441-31e06eb690cc_620b401d-b0ea-4ec5-8365-109116e35583.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\be603659-d0e5-48d9-b5d5-eade4d4d0c6a_1170559.jpg",
+      "PackagePath": "staticwebassets\\images\\be603659-d0e5-48d9-b5d5-eade4d4d0c6a_1170559.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\bfd675c3-ffa2-4ad4-bbca-dad66c469e59_images.png",
+      "PackagePath": "staticwebassets\\images\\bfd675c3-ffa2-4ad4-bbca-dad66c469e59_images.png"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\c4798b3b-8f65-4884-b33c-b5284d2e056b_bia-truoc-592fdb69-69ca-48dc-998a-330955fab7df.jpg",
+      "PackagePath": "staticwebassets\\images\\c4798b3b-8f65-4884-b33c-b5284d2e056b_bia-truoc-592fdb69-69ca-48dc-998a-330955fab7df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\c60e4660-6937-4a3f-857d-8a54e2247bc2_5436-darwin-va-cac-nha-khoa-hoc-khac-1.jpg",
+      "PackagePath": "staticwebassets\\images\\c60e4660-6937-4a3f-857d-8a54e2247bc2_5436-darwin-va-cac-nha-khoa-hoc-khac-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\c6b7c22d-e128-4f75-ab84-0e2d0e0c1336_anh-cute-001-1.jpg",
+      "PackagePath": "staticwebassets\\images\\c6b7c22d-e128-4f75-ab84-0e2d0e0c1336_anh-cute-001-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\db5d95ed-1715-47c0-aff8-6b4c3be62b4a_4493-kinh-te-hoc-vi-mo-1.jpg",
+      "PackagePath": "staticwebassets\\images\\db5d95ed-1715-47c0-aff8-6b4c3be62b4a_4493-kinh-te-hoc-vi-mo-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\e991fa8c-7236-441a-bfa3-f1b41d99573e_2022_06_07_14_08_56_1-390x510-2.jpg",
+      "PackagePath": "staticwebassets\\images\\e991fa8c-7236-441a-bfa3-f1b41d99573e_2022_06_07_14_08_56_1-390x510-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\ee7dc701-4685-4859-a9ed-bda2d978ee4d_620b401d-b0ea-4ec5-8365-109116e35583.jpg",
+      "PackagePath": "staticwebassets\\images\\ee7dc701-4685-4859-a9ed-bda2d978ee4d_620b401d-b0ea-4ec5-8365-109116e35583.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\f237dc21-1855-4421-b94e-1a7c5443f5b8_tải xuống (3).jpg",
+      "PackagePath": "staticwebassets\\images\\f237dc21-1855-4421-b94e-1a7c5443f5b8_tải xuống (3).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\f36a7580-af0c-43b3-88b9-a3a959cf9ca2_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\f36a7580-af0c-43b3-88b9-a3a959cf9ca2_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\f5712f6a-7a21-451c-bf94-c80fe8c3d4a3_tải xuống (3).jpg",
+      "PackagePath": "staticwebassets\\images\\f5712f6a-7a21-451c-bf94-c80fe8c3d4a3_tải xuống (3).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\fc7d042a-e9e1-4b7c-89ce-af689e5438b5_cong-nghe.webp",
+      "PackagePath": "staticwebassets\\images\\fc7d042a-e9e1-4b7c-89ce-af689e5438b5_cong-nghe.webp"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\images\\ff4801ec-f2e1-4d51-b4ab-5bbf71044d1f_tải xuống (1).jpg",
+      "PackagePath": "staticwebassets\\images\\ff4801ec-f2e1-4d51-b4ab-5bbf71044d1f_tải xuống (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\js\\book.js",
+      "PackagePath": "staticwebassets\\js\\book.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\js\\detail.js",
+      "PackagePath": "staticwebassets\\js\\detail.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.QuanLyThuVien.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.QuanLyThuVien.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.QuanLyThuVien.props",
+      "PackagePath": "build\\QuanLyThuVien.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.QuanLyThuVien.props",
+      "PackagePath": "buildMultiTargeting\\QuanLyThuVien.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.QuanLyThuVien.props",
+      "PackagePath": "buildTransitive\\QuanLyThuVien.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

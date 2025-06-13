@@ -1,0 +1,38 @@
+﻿@model QuanLyThuVien.Models.LibraryCard
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa thẻ thư viện";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4 text-center bg-light text-dark" style="max-width: 600px;">
+        <h2 class="fw-bold text-danger">Xóa Thẻ Thư Viện</h2>
+        <hr class="bg-light">
+
+        <p class="lead">Bạn có chắc chắn muốn xóa thẻ thư viện này không?</p>
+        <dl class="row text-start">
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.CardId):</dt>
+            <dd class="col-sm-8">@Model.CardId</dd>
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.StudentID):</dt>
+            <dd class="col-sm-8">@Model.StudentID</dd>
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.FullName):</dt>
+            <dd class="col-sm-8">@Model.FullName</dd>
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.PhoneNumber):</dt>
+            <dd class="col-sm-8">@Model.PhoneNumber</dd>
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.IssuedDate):</dt>
+            <dd class="col-sm-8">@Model.IssuedDate.ToShortDateString()</dd>
+            <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.ExpiryDate):</dt>
+            <dd class="col-sm-8">@Model.ExpiryDate.ToShortDateString()</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="CardId" />
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-danger fw-bold btn-lg rounded-pill px-4 shadow-sm">Xóa</button>
+                <a asp-action="Index" class="btn btn-outline-dark fw-bold btn-lg rounded-pill px-4 shadow-sm">Quay Lại</a>
+            </div>
+        </form>
+    </div>
+</div>

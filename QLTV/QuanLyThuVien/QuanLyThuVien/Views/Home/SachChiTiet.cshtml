@@ -1,0 +1,108 @@
+@model IEnumerable<QuanLyThuVien.Models.Book>
+@{
+    ViewData["Title"] = "Danh mục sách";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2 class="text-primary">📚 Danh Mục Sách</h2>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex gap-2">
+                <select id="categoryFilter" class="form-select" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "Name"))">
+                    <option value="">-- Tất cả thể loại --</option>
+                </select>
+                <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sách...">
+                <button class="btn btn-primary" onclick="applyFilters()">
+                    <i class="fas fa-search"></i> Tìm Kiếm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="bookList">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-3 mb-4 book-item" data-category="@book.CategoryId">
+                <div class="card h-100 shadow-sm">
+                    @if (!string.IsNullOrEmpty(book.ImageUrl))
+                    {
+                        <img src="@book.ImageUrl" class="card-img-top" alt="@book.Name" style="height: 200px; object-fit: cover;">
+                    }
+                    else
+                    {
+                        <img src="~/images/default-book.jpg" class="card-img-top" alt="@book.Name" style="height: 200px; object-fit: cover;">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate" title="@book.Name">@book.Name</h5>
+                        <p class="card-text mb-1"><small class="text-muted">Tác giả: @book.Author</small></p>
+                        <p class="card-text mb-1"><small class="text-muted">Thể loại: @book.Category?.Name</small></p>
+                        <p class="card-text mb-2">
+                            <small class="text-muted">
+                                Vị trí: Dãy @book.ShelfRow - Kệ @book.ShelfNumber
+                            </small>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge @(book.BookStatus == QuanLyThuVien.Models.Book.Status.Available ? "bg-success" : 
+                                             (book.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed ? "bg-warning" : "bg-danger"))">
+                                @if (book.BookStatus == QuanLyThuVien.Models.Book.Status.Available)
+                                {
+                                    @:Còn hàng
+                                }
+                                else if (book.BookStatus == QuanLyThuVien.Models.Book.Status.Borrowed)
+                                {
+                                    @:Đang mượn
+                                }
+                                else
+                                {
+                                    @:Hết hàng
+                                }
+                            </span>
+                            <a href="@Url.Action("ChiTietSach", "Home", new { id = book.BookId })" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function applyFilters() {
+            const categoryId = $('#categoryFilter').val();
+            const searchText = $('#searchInput').val().toLowerCase();
+            
+            $('.book-item').each(function() {
+                const $item = $(this);
+                const itemCategory = $item.data('category');
+                const itemText = $item.text().toLowerCase();
+                
+                const categoryMatch = !categoryId || itemCategory == categoryId;
+                const searchMatch = !searchText || itemText.includes(searchText);
+                
+                if (categoryMatch && searchMatch) {
+                    $item.show();
+                } else {
+                    $item.hide();
+                }
+            });
+        }
+
+        // Áp dụng tìm kiếm khi nhấn Enter trong ô tìm kiếm
+        $('#searchInput').on('keypress', function(e) {
+            if (e.which == 13) {
+                applyFilters();
+            }
+        });
+
+        // Áp dụng lọc ngay khi thay đổi thể loại
+        $('#categoryFilter').on('change', function() {
+            applyFilters();
+        });
+    </script>
+} 

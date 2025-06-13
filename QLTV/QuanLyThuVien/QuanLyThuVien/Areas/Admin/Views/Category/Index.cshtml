@@ -1,0 +1,49 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý thể loại";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xl mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-dark fw-bold">📘📕 Quản lý Thể Loại</h2>
+        <a asp-action="Add" class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm">➕ Thêm Thể Loại</a>
+    </div>
+
+    <div class="card shadow-lg mt-4 bg-white text-dark">
+        <div class="card-body">
+            <div class="table-responsive w-100">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Thể Loại</th>
+                            <th class="text-center">Chức Năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var category in Model)
+                        {
+                            <tr>
+                                <td>@category.CategoryId</td>
+                                <td>@category.Name</td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Update" asp-route-id="@category.CategoryId" class="btn btn-warning btn-sm rounded-pill">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@category.CategoryId" class="btn btn-danger btn-sm rounded-pill">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

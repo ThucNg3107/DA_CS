@@ -1,0 +1,26 @@
+﻿@model QuanLyThuVien.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Edit Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4 rounded-4" style="max-width: 500px;">
+        <h2 class="text-center text-black mb-4"> Update Category</h2>
+        <form asp-action="Update" method="post">
+            <input type="hidden" asp-for="CategoryId" />
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label text-black fw-bold">Category Name</label>
+                <input asp-for="Name" class="form-control bg-transparent text-black border-white" placeholder="Enter new category name" />
+                <span asp-validation-for="Name" class="text-warning"></span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-warning w-48"> Update</button>
+                <a asp-action="Index" class="btn btn-outline-dark w-48"> Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+

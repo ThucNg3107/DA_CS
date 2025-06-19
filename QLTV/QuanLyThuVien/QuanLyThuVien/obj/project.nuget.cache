@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Atw+5qrV3BQ=",
+  "dgSpecHash": "8b7P1B0Kbg4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
+  "projectFilePath": "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thucc\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\thucc\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

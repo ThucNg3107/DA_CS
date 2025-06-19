@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {}
+    "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {
+    "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectUniqueName": "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
         "projectName": "QuanLyThuVien",
-        "projectPath": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectPath": "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
         "packagesPath": "C:\\Users\\thucc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thucc\\OneDrive\\Desktop\\QLTV - Copy (1)\\QuanLyThuVien\\QuanLyThuVien\\obj\\",
+        "outputPath": "C:\\Users\\thucc\\OneDrive\\Documents\\GitHub\\DA_CS\\QLTV\\QuanLyThuVien\\QuanLyThuVien\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
